@@ -15,10 +15,10 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://physical-ai-humanoid-book-murex.vercel.app/',
+  url: 'http://localhost:3003',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: 'https://physical-ai-humanoid-book-murex.vercel.app/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -68,6 +68,9 @@ const config: Config = {
     ],
   ],
 
+  clientModules: [
+    './src/client-env.js', // Custom module to inject environment variables
+  ],
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -75,22 +78,31 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Physical AI & Humanoid Robotics',
+      title: 'Physical AI',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Logo',
         src: 'img/logo.svg',
       },
       items: [
         {
+          type: 'doc',
+          docId: 'intro',
+          position: 'left',
+          label: 'Docs',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Chapters',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/your-repo/physical-ai-humanoid-book',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'search',
           position: 'right',
         },
       ],
@@ -99,46 +111,58 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Book',
               to: '/docs/intro',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Getting Started',
+              to: '/docs/intro',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Advanced Topics',
+              to: '/docs/module-1-ros2/01-ros2-overview',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Resources',
           items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/your-repo/physical-ai-humanoid-book',
+            },
+            {
+              label: 'API Reference',
+              href: 'https://github.com/your-repo/physical-ai-humanoid-book',
+            },
+            {
+              label: 'Community',
+              href: 'https://discordapp.com/invite/your-channel',
+            },
+          ],
+        },
+        {
+          title: 'Company',
+          items: [
+            {
+              label: 'About',
+              href: 'https://your-company.com',
+            },
             {
               label: 'Blog',
               to: '/blog',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Contact',
+              href: 'https://your-company.com/contact',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

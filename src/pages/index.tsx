@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import FeatureCards from '@site/src/components/FeatureCards';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -12,16 +12,31 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
+      {/* Premium floating background elements */}
+      <div className={styles.heroFloating}></div>
+      <div className={styles.heroFloating}></div>
+      <div className={styles.heroFloating}></div>
+
+      {/* Animated wave element */}
+      <div className={styles.heroWave}></div>
+
+      <div className={clsx(styles.heroContent, 'text--center')}>
+        <Heading as="h1" className={clsx('hero__title', styles.slideInUp)}>
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+        <p className={clsx('hero__subtitle', styles.fadeIn)}>
+          {siteConfig.tagline}
+        </p>
+        <div className={clsx(styles.buttons, styles.scaleIn)}>
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/intro">
+            Start Reading
+          </Link>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Let's Get Started
+            View Chapters
           </Link>
         </div>
       </div>
@@ -33,11 +48,11 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Documentation - ${siteConfig.title}`}
+      description="Comprehensive guide to Physical AI & Humanoid Robotics">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <FeatureCards />
       </main>
     </Layout>
   );

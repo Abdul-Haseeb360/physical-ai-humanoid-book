@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la .env* *.env)",
+      "Bash(npm run start)",
+      "Bash(npx docusaurus start --port 3001)",
+      "Bash(findstr :300)",
+      "Bash(npx docusaurus start --port 3005)",
+      "WebFetch(domain:robotics-course.vercel.app)",
+      "Bash(npx docusaurus start --port 3006)",
+      "Bash(dir srccomponents)",
+      "Bash(dir task.md)"
+    ]
+  }
+}

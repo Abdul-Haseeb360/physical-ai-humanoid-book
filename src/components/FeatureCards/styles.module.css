@@ -1,0 +1,108 @@
+/**
+ * CSS styles for the FeatureCards component.
+ */
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+  background-color: var(--docusaurus-surface-background);
+  /* Added a subtle top padding to give some space from the hero section */
+  padding-top: 4rem; 
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: var(--docusaurus-card-shadow); /* Soft shadow */
+  margin-bottom: 2rem; /* Spacing between cards */
+  padding: 2rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 100%; /* Ensure cards in a row have equal height */
+  background-color: var(--docusaurus-card-background-color);
+  border: 1px solid var(--docusaurus-card-border-color); /* Subtle border */
+}
+
+.featureCard:hover {
+  transform: translateY(-8px); /* Slight elevation on hover */
+  box-shadow: var(--docusaurus-card-shadow-hover); /* Enhanced shadow on hover */
+}
+
+.featureSvg {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  color: var(--docusaurus-primary-color); /* Use primary color for SVG */
+}
+
+/* Adjustments for the image in the last card */
+.featureSvg[src*="docusaurus.png"] {
+  width: 80px; /* Adjust width as needed */
+  height: 80px; /* Adjust height as needed */
+  /* If it's a PNG, it might not inherit color property, so ensure it looks good */
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--docusaurus-text-color);
+}
+
+.featureDescription {
+  font-size: 1rem;
+  color: var(--docusaurus-text-color-secondary);
+}
+
+/* Responsive adjustments for grid layout */
+@media screen and (min-width: 996px) {
+  .featureCard {
+    /* For larger screens, cards will be in 3 columns, so col--4 */
+    width: calc(33.333% - 2rem); /* 3 cards per row with spacing */
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .features .container .row {
+    justify-content: center; /* Center the cards */
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 995px) {
+  .featureCard {
+    /* For tablet, 2 cards per row, so col--6 */
+    width: calc(50% - 2rem);
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .featureCard {
+    /* For mobile, 1 card per row, so col--12 */
+    width: calc(100% - 2rem);
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+/* Custom CSS variables for better theming (if not already defined) */
+:root {
+  --docusaurus-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --docusaurus-card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --docusaurus-card-background-color: var(--ifm-background-color);
+  --docusaurus-card-border-color: var(--ifm-color-emphasis-200);
+  --docusaurus-surface-background: var(--ifm-background-color);
+  --docusaurus-text-color: var(--ifm-font-color-base);
+  --docusaurus-text-color-secondary: var(--ifm-color-emphasis-700);
+}
+
+[data-theme='dark'] {
+  --docusaurus-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --docusaurus-card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.4);
+  --docusaurus-card-background-color: var(--ifm-background-color);
+  --docusaurus-card-border-color: var(--ifm-color-emphasis-800);
+}

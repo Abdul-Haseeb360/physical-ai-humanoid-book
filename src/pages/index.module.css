@@ -1,23 +1,100 @@
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * Premium Hero Section Styling - Professional Book Design
+ * A complete transformation to a product-like hero experience
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 8rem 0 10rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: var(--ifm-gradient-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  max-height: 100vh;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+/* Floating background elements for premium look */
+.heroFloating {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.heroFloating:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.heroFloating:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  right: 15%;
+  animation: float 10s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.heroFloating:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  top: 40%;
+  right: 25%;
+  animation: float 7s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Wave element at the bottom */
+.heroWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,128C672,128,768,160,864,176C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: bottom;
+  z-index: 1;
+}
+
+/* Hero content styling */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
+/* Button container styling */
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .heroWave {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231e293b' fill-opacity='0.2' d='M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,128C672,128,768,160,864,176C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
 }
