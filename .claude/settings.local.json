@@ -9,7 +9,10 @@
       "WebFetch(domain:robotics-course.vercel.app)",
       "Bash(npx docusaurus start --port 3006)",
       "Bash(dir srccomponents)",
-      "Bash(dir task.md)"
+      "Bash(dir task.md)",
+      "Bash(npx docusaurus start)",
+      "Bash(npx docusaurus clear)",
+      "Bash(npm run build)"
     ]
   }
 }

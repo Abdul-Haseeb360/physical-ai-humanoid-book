@@ -123,7 +123,7 @@ const config: Config = {
             },
             {
               label: 'Advanced Topics',
-              to: '/docs/module-1-ros2/01-ros2-overview',
+              to: '/docs/module-1-ros2/ros2-overview',
             },
           ],
         },
