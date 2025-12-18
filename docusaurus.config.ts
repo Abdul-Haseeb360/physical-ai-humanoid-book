@@ -1,13 +1,14 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Physical AI & Humanoid Robotics',
-  tagline: 'Practical Principles for an AI-Driven World: Hands-on Learning for AI Fairness, Safety, Privacy, and Responsibility',
-  favicon: 'img/favicon.ico',
+  title: "Physical AI & Humanoid Robotics",
+  tagline:
+    "Practical Principles for an AI-Driven World: Hands-on Learning for AI Fairness, Safety, Privacy, and Responsibility",
+  favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -15,149 +16,150 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'http://localhost:3003',
+  url: "https://physical-ai-humanoid-book-murex.vercel.app",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'abdul-haseeb360', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-humanoid-book', // Usually your repo name.
+  organizationName: "abdul-haseeb360", // Usually your GitHub org/user name.
+  projectName: "physical-ai-humanoid-book", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: "throw",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
   ],
 
   clientModules: [
-    './src/client-env.js', // Custom module to inject environment variables
+    "./src/client-env.js", // Custom module to inject environment variables
   ],
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     colorMode: {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Physical AI',
+      title: "Physical AI",
       logo: {
-        alt: 'Logo',
-        src: 'img/logo.svg',
+        alt: "Logo",
+        src: "img/logo.svg",
       },
       items: [
         {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Docs',
+          type: "doc",
+          docId: "intro",
+          position: "left",
+          label: "Docs",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Chapters',
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "Chapters",
         },
         {
-          href: 'https://github.com/your-repo/physical-ai-humanoid-book',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/your-repo/physical-ai-humanoid-book",
+          label: "GitHub",
+          position: "right",
         },
         {
-          type: 'search',
-          position: 'right',
+          type: "search",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Documentation',
+          title: "Documentation",
           items: [
             {
-              label: 'Book',
-              to: '/docs/intro',
+              label: "Book",
+              to: "/docs/intro",
             },
             {
-              label: 'Getting Started',
-              to: '/docs/intro',
+              label: "Getting Started",
+              to: "/docs/intro",
             },
             {
-              label: 'Advanced Topics',
-              to: '/docs/module-1-ros2/ros2-overview',
+              label: "Advanced Topics",
+              to: "/docs/module-1-ros2/ros2-overview",
             },
           ],
         },
         {
-          title: 'Resources',
+          title: "Resources",
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/your-repo/physical-ai-humanoid-book',
+              label: "GitHub",
+              href: "https://github.com/your-repo/physical-ai-humanoid-book",
             },
             {
-              label: 'API Reference',
-              href: 'https://github.com/your-repo/physical-ai-humanoid-book',
+              label: "API Reference",
+              href: "https://github.com/your-repo/physical-ai-humanoid-book",
             },
             {
-              label: 'Community',
-              href: 'https://discordapp.com/invite/your-channel',
+              label: "Community",
+              href: "https://discordapp.com/invite/your-channel",
             },
           ],
         },
         {
-          title: 'Company',
+          title: "Company",
           items: [
             {
-              label: 'About',
-              href: 'https://your-company.com',
+              label: "About",
+              href: "https://your-company.com",
             },
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              to: "/blog",
             },
             {
-              label: 'Contact',
-              href: 'https://your-company.com/contact',
+              label: "Contact",
+              href: "https://your-company.com/contact",
             },
           ],
         },
