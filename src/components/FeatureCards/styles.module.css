@@ -1,108 +1,224 @@
-/**
- * CSS styles for the FeatureCards component.
- */
-
 .features {
+  padding: 8rem 0;
+  background-color: var(--slate-950);
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(37, 99, 235, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(37, 99, 235, 0.05) 0%,
+      transparent 50%
+    );
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="light"] .features {
+  background-color: var(--slate-50);
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.featureCol {
   display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-  background-color: var(--docusaurus-surface-background);
-  /* Added a subtle top padding to give some space from the hero section */
-  padding-top: 4rem; 
 }
 
 .featureCard {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.7) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align content to the top */
-  align-items: center;
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: var(--docusaurus-card-shadow); /* Soft shadow */
-  margin-bottom: 2rem; /* Spacing between cards */
-  padding: 2rem;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  height: 100%; /* Ensure cards in a row have equal height */
-  background-color: var(--docusaurus-card-background-color);
-  border: 1px solid var(--docusaurus-card-border-color); /* Subtle border */
+  text-decoration: none !important;
+  color: inherit;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  width: 100%;
+}
+
+[data-theme="light"] .featureCard {
+  background: white;
+  border-color: var(--slate-200);
 }
 
 .featureCard:hover {
-  transform: translateY(-8px); /* Slight elevation on hover */
-  box-shadow: var(--docusaurus-card-shadow-hover); /* Enhanced shadow on hover */
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(37, 99, 235, 0.2);
+  cursor: pointer;
+}
+
+[data-theme="light"] .featureCard:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.featureIllustration {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustrationOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(15, 23, 42, 0.8)
+  );
+  z-index: 1;
 }
 
 .featureSvg {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 1rem;
-  color: var(--docusaurus-primary-color); /* Use primary color for SVG */
+  width: 120px;
+  height: 120px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--ifm-color-primary);
+  z-index: 0;
+  filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.3));
 }
 
-/* Adjustments for the image in the last card */
-.featureSvg[src*="docusaurus.png"] {
-  width: 80px; /* Adjust width as needed */
-  height: 80px; /* Adjust height as needed */
-  /* If it's a PNG, it might not inherit color property, so ensure it looks good */
+.featureCard:hover .featureSvg {
+  transform: scale(1.15) rotate(2deg);
+}
+
+.featureContent {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  z-index: 1;
 }
 
 .featureTitle {
   font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--docusaurus-text-color);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="light"] .featureTitle {
+  color: var(--slate-900);
 }
 
 .featureDescription {
   font-size: 1rem;
-  color: var(--docusaurus-text-color-secondary);
+  color: var(--slate-400);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* Responsive adjustments for grid layout */
-@media screen and (min-width: 996px) {
-  .featureCard {
-    /* For larger screens, cards will be in 3 columns, so col--4 */
-    width: calc(33.333% - 2rem); /* 3 cards per row with spacing */
-    margin-right: 1rem;
-    margin-left: 1rem;
+[data-theme="light"] .featureDescription {
+  color: var(--slate-600);
+}
+
+.tagContainer {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tagBadge {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--ifm-color-primary-lighter);
+  padding: 0.35rem 0.85rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+[data-theme="light"] .tagBadge {
+  background: var(--slate-100);
+  color: var(--slate-700);
+  border-color: var(--slate-200);
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(37, 99, 235, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.featureCard:hover .cardGlow {
+  opacity: 1;
+}
+
+@media screen and (max-width: 996px) {
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 1rem;
   }
-  .features .container .row {
-    justify-content: center; /* Center the cards */
+
+  .features {
+    padding: 6rem 0;
+  }
+
+  .featureContent {
+    padding: 2rem;
+  }
+
+  .featureTitle {
+    font-size: 1.25rem;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 995px) {
-  .featureCard {
-    /* For tablet, 2 cards per row, so col--6 */
-    width: calc(50% - 2rem);
-    margin-right: 1rem;
-    margin-left: 1rem;
+@media screen and (max-width: 768px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-}
 
-@media screen and (max-width: 767px) {
-  .featureCard {
-    /* For mobile, 1 card per row, so col--12 */
-    width: calc(100% - 2rem);
-    margin-right: 1rem;
-    margin-left: 1rem;
+  .features {
+    padding: 4rem 0;
   }
-}
 
-/* Custom CSS variables for better theming (if not already defined) */
-:root {
-  --docusaurus-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --docusaurus-card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
-  --docusaurus-card-background-color: var(--ifm-background-color);
-  --docusaurus-card-border-color: var(--ifm-color-emphasis-200);
-  --docusaurus-surface-background: var(--ifm-background-color);
-  --docusaurus-text-color: var(--ifm-font-color-base);
-  --docusaurus-text-color-secondary: var(--ifm-color-emphasis-700);
-}
+  .featureIllustration {
+    height: 160px;
+  }
 
-[data-theme='dark'] {
-  --docusaurus-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  --docusaurus-card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.4);
-  --docusaurus-card-background-color: var(--ifm-background-color);
-  --docusaurus-card-border-color: var(--ifm-color-emphasis-800);
+  .featureSvg {
+    width: 80px;
+    height: 80px;
+  }
 }

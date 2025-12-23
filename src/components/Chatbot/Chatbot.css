@@ -10,13 +10,17 @@
   height: 600px;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  background: var(--ifm-background-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   overflow: hidden;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: var(--ifm-font-family-base);
+  transition: all 0.3s ease;
+  border: 1px solid var(--slate-200);
+}
+
+[data-theme="dark"] .chatbot-container {
+  border: 1px solid var(--slate-800);
 }
 
 /* Chatbot header - Professional gradient styling */
@@ -42,7 +46,7 @@
 }
 
 .chatbot-header-title::before {
-  content: '🤖';
+  content: "🤖";
   font-size: 16px;
 }
 
@@ -96,8 +100,14 @@
 }
 
 @keyframes slideInMessage {
-  from { opacity: 0; transform: translateY(10px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .chat-message-user {
@@ -110,7 +120,7 @@
 }
 
 .chat-message-user::after {
-  content: '';
+  content: "";
   position: absolute;
   right: -8px;
   bottom: 0;
@@ -132,7 +142,7 @@
 }
 
 .chat-message-agent::after {
-  content: '';
+  content: "";
   position: absolute;
   left: -8px;
   bottom: 0;
@@ -215,7 +225,8 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 2px rgba(0, 0, 0, 0.02);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   line-height: 1.5;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   color: #1f2937;
   appearance: none;
   -webkit-appearance: none;
@@ -235,7 +246,8 @@
 
 .chatbot-input:focus {
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(37, 99, 235, 0.15), inset 0 1px 2px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2),
+    0 4px 12px rgba(37, 99, 235, 0.15), inset 0 1px 2px rgba(0, 0, 0, 0.02);
   transform: translateY(-1px);
 }
 
@@ -247,7 +259,8 @@
 
 .chatbot-input:hover {
   border-color: rgba(37, 99, 235, 0.3);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06), inset 0 1px 2px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06),
+    inset 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
 /* Modern professional send button styling */
@@ -312,13 +325,25 @@
   box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
 }
 
-.loading-dot:nth-child(1) { animation-delay: 0s; }
-.loading-dot:nth-child(2) { animation-delay: 0.2s; }
-.loading-dot:nth-child(3) { animation-delay: 0.4s; }
+.loading-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
 
 @keyframes bounceProfessional {
-  0%, 80%, 100% { transform: translateY(0) scale(1); }
-  40% { transform: translateY(-6px) scale(1.1); }
+  0%,
+  80%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-6px) scale(1.1);
+  }
 }
 
 /* Error message - Professional styling */
@@ -335,9 +360,16 @@
 }
 
 @keyframes shakeError {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-2px); }
-  75% { transform: translateX(2px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
 }
 
 /* Toggle button (when chatbot is minimized) - Professional styling */

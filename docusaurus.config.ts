@@ -8,7 +8,7 @@ const config: Config = {
   title: "Physical AI & Humanoid Robotics",
   tagline:
     "Practical Principles for an AI-Driven World: Hands-on Learning for AI Fairness, Safety, Privacy, and Responsibility",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.png",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -82,9 +82,11 @@ const config: Config = {
     navbar: {
       title: "Physical AI",
       logo: {
-        alt: "Logo",
-        src: "img/logo.svg",
+        alt: "Physical AI Logo",
+        src: "img/logo.png",
+        className: "navbar-logo-custom",
       },
+      hideOnScroll: false,
       items: [
         {
           type: "doc",
@@ -93,15 +95,10 @@ const config: Config = {
           label: "Docs",
         },
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Chapters",
-        },
-        {
-          href: "https://github.com/your-repo/physical-ai-humanoid-book",
+          href: "https://github.com/Abdul-Haseeb360/physical-ai-humanoid-book",
           label: "GitHub",
           position: "right",
+          className: "navbar-github-link",
         },
         {
           type: "search",
@@ -130,36 +127,15 @@ const config: Config = {
           ],
         },
         {
-          title: "Resources",
+          title: "Connect",
           items: [
+            {
+              label: "Portfolio",
+              href: "https://haseeb-shaikh.netlify.app/",
+            },
             {
               label: "GitHub",
-              href: "https://github.com/your-repo/physical-ai-humanoid-book",
-            },
-            {
-              label: "API Reference",
-              href: "https://github.com/your-repo/physical-ai-humanoid-book",
-            },
-            {
-              label: "Community",
-              href: "https://discordapp.com/invite/your-channel",
-            },
-          ],
-        },
-        {
-          title: "Company",
-          items: [
-            {
-              label: "About",
-              href: "https://your-company.com",
-            },
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
-              label: "Contact",
-              href: "https://your-company.com/contact",
+              href: "https://github.com/Abdul-Haseeb360",
             },
           ],
         },
